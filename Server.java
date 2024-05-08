@@ -1,4 +1,5 @@
-if (args.length == 0) {
+        String message = null;
+        if (args.length == 0) {
             System.err.println("Usage: java HashGeneratorServer <message>");
             return null;
         }
@@ -13,9 +14,9 @@ if (args.length == 0) {
                     PrintWriter out;
                     try (BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
                         out = new PrintWriter(clientSocket.getOutputStream(), true);
-                        String message = in.readLine();
+                        message = in.readLine();
                         if(message != null)
-                            out.println(message);//TODO edit
+                            out.println(message);//modificare
                         else
                             System.out.println("Errore, il messaggio è vuoto.");
                     }
@@ -25,3 +26,4 @@ if (args.length == 0) {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        return message;

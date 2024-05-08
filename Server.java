@@ -16,7 +16,7 @@
                         out = new PrintWriter(clientSocket.getOutputStream(), true);
                         message = in.readLine();
                         if(message != null)
-                            out.println(message);//modificare
+                            out.println(message);//TODO edit
                         else
                             System.out.println("Errore, il messaggio è vuoto.");
                     }
